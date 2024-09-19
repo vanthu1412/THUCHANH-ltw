@@ -9,7 +9,7 @@ viewEngine(app)
 const port=process.env.PORT
 
 app.get('/', (req, res) => {
-    res.send('Hello, My name is Baro')
+    res.send('Hello World!!!')
 })
 
 app.listen(port, () => {
@@ -17,7 +17,7 @@ app.listen(port, () => {
 })
 
 app.get('/about', (req, res) => {
-    res.send('Xin chào, tên của tôi là Baro')
+    res.send('Hello World!. Page about')
 })
 
 app.get('/date', (req, res) => {
