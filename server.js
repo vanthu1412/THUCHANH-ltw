@@ -1,48 +1,21 @@
-import express from 'express'
-import dotenv from 'dotenv/config'
-import myDateTime from './date'
-import getURL from './getURL'
-import viewEngine from './viewEngine'
+const express = require('express');
+const path = require('path');
+const webRoute = require('./routes/webRoute');
 
-const app = express()
-viewEngine(app)
-const port=process.env.PORT
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!!!')
-})
+// Thiết lập EJS là view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+// Thiết lập thư mục tĩnh
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/about', (req, res) => {
-    res.send('Hello World!. Page about')
-})
+// Sử dụng router
+app.use('/', webRoute);
 
-app.get('/date', (req, res) => {
-    const date = myDateTime();
-    res.send(date);
+// Khởi động server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-app.get('/geturl', (req, res) => {
-    const getParamsURL = getURL.getParamsURL(req);
-    res.send(getParamsURL);
-})
-
-app.get('/geturl', (req, res) => {
-    const getPath = getURL.getPath(req);
-    res.send(getPath);
-})
-
-app.get('/ejs', (req, res) => { 
-    res.render("test")
-})
-
-app.get('/homeejs', (req, res) => { 
-    res.render("home")
-})
-
-app.get('/aboutejs', (req, res) => { 
-    res.render("about")
-})
