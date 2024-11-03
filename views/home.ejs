@@ -1,16 +1,46 @@
-<!-- views/home.ejs -->
 <%- include('header') %>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="display-4">Chào mừng đến với trang chủ</h1>
-            <p class="lead">Khám phá các thông tin về trường học và những tin tức mới nhất</p>
-            <a href="/about" class="btn btn-primary btn-lg mt-4" style="background-color: #0d4e8f; border-color: #0d4e8f;">Tìm hiểu thêm</a>
+<div class="container-fluid p-5 text-center text-white bg-primary" style="background-image: url('https://example.com/your-background-image.jpg'); background-size: cover; background-position: center;">
+    <div class="py-5">
+        <h1 class="display-4 fw-bold">Chào mừng đến với trang chủ</h1>
+        <p class="lead">Khám phá các thông tin về và những tin tức mới nhất</p>
+        <a href="/about" class="btn btn-lg btn-light mt-4 rounded-pill">Tìm hiểu thêm</a>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row g-4">
+        <!-- About Us Section -->
+        <div class="col-md-4 text-center">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Giới thiệu về chúng tôi</h5>
+                    <p class="card-text">Thông tin về lịch sử, sứ mạng và tầm nhìn .</p>
+                    <a href="/about" class="btn btn-outline-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Latest News Section -->
+        <div class="col-md-4 text-center">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Tin tức mới nhất</h5>
+                    <p class="card-text">Cập nhật những sự kiện và hoạt động mới nhất.</p>
+                    <a href="/news" class="btn btn-outline-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Section -->
+        <div class="col-md-4 text-center">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Liên hệ</h5>
+                    <p class="card-text">Liên hệ với chúng tôi để được hỗ trợ và tư vấn thêm.</p>
+                    <a href="/contact" class="btn btn-outline-primary">Xem thêm</a>
+                </div>
+            </div>
         </div>
     </div>
-</div><br>
-
-
+</div>
 
 <%- include('footer') %>

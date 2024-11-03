@@ -1,4 +1,5 @@
 // ContactController.js
-exports.index = (req, res) => {
-    res.render('contact', { title: 'Liên Hệ', content: 'Thông tin liên hệ' });
+export const renderContact = (req, res) => {
+    const username = req.session.username;
+    res.render('contact', { title: 'Liên Hệ', content: 'Thông tin liên hệ', username, title:'Liên hệ' });
 };

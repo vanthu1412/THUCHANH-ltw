@@ -1,4 +1,5 @@
 // controllers/HomeController.js
-exports.index = (req, res) => {
-    res.render('home', { title: 'Trang Chủ' });
+export const renderHome = (req, res) => {
+    const username = req.session.username;
+    res.render('home', { title: 'Trang Chủ', username });
 };

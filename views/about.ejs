@@ -1,10 +1,60 @@
-<!-- views/about.ejs -->
 <%- include('header') %>
 
-<div class="container mt-5">
-    <h1>Giới Thiệu</h1>
-    <p>Chào mừng bạn đến với trang giới thiệu của Thư</p>
+<div class="container my-5">
+    <!-- Hero Section for About Page -->
+    <div class="bg-primary text-white text-center p-5 rounded-3">
+        <h1 class="display-4 fw-bold">Giới Thiệu</h1>
+        <p class="lead">Chào mừng bạn đến với trang giới thiệu của Thư</p>
+    </div>
 
+    <!-- Content Section -->
+    <div class="row mt-5">
+        <div class="col-md-6 mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title">Sứ mệnh của chúng tôi</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title">Tầm nhìn</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Information Section -->
+    <div class="row mt-3">
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Lịch sử phát triển</h5>
+                    <p class="card-text">Tìm hiểu về quá trình hình thành và phát triển.</p>
+                    <a href="/history" class="btn btn-outline-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Cơ cấu tổ chức</h5>
+                    <p class="card-text">Khám phá cơ cấu tổ chức và các phòng ban.</p>
+                    <a href="/organization" class="btn btn-outline-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Đối tác và liên kết</h5>
+                    <p class="card-text">Xem các đối tác và chương trình liên kết.</p>
+                    <a href="/partners" class="btn btn-outline-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <%- include('footer') %>
