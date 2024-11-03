@@ -15,8 +15,13 @@ router.get('/users', UserController.getUsers);
 router.get('/myProfile', renderMyProfile);
 router.get('/login', renderLogin);
 router.post('/checklogin', handleLogin);
+
 router.get('/usersadd', UserController.renderUseradd);
 router.post('/adduser', UserController.usersAdd);
+
+router.get('/users/:id', UserController.renderUserDetail);
+
 router.get('/usersedit/:id', UserController.renderUserEdit);
 router.post('/edituser/:id', UserController.edituser);
+router.get('/usersdelete/:id', UserController.renderDelete);
 export default router;

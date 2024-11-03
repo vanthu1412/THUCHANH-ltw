@@ -6,6 +6,18 @@ export const getUsers = async (req, res) => {
     res.render('users', { users:rows , title: 'Người dùng', username } );
 }
 
+// controllers/UserController.js
+export const renderUserDetail = async (req, res) => {
+    const username = req.session.username;
+    const userId = req.params.id;
+    const [rows] = await db.query('SELECT * FROM users WHERE id = ?', [userId]);
+
+    res.render('userDetail', { user: rows[0], title: 'Chi tiết người dùng', username });
+};
+
+
+
+
 export const renderUseradd = async (req, res) => {
     const username = req.session.username;
     res.render('usersadd', {title: 'Thêm người dùng', username});
@@ -40,6 +52,15 @@ export const edituser = async (req, res) => {
         await db.query('UPDATE users SET username = ?, fullname = ?, address = ?, sex = ?, email = ? WHERE id = ?', 
             [username, fullname, address, sex, email, userId]);
 
+        res.redirect('/users'); // Chuyển hướng đến trang danh sách người dùng
+    
+};
+
+export const renderDelete = async (req, res) => {
+    const userId = req.params.id;
+
+        // Xóa người dùng theo ID
+        await db.query('DELETE FROM users WHERE id = ?', [userId]);
         res.redirect('/users'); // Chuyển hướng đến trang danh sách người dùng
     
 };
